@@ -33,7 +33,20 @@
 }
 
 body {
-    font-family: "Gvonz", sans-serif;
-    color: rgb(var(--foreground-rgb));
     background: black;
+    color: white;
+    font-family: "Gvonz", sans-serif;
+}
+
+.title {
+    font-family: "Gvonz", sans-serif;
+    font-weight: 300;
+    color: #07d6d1;
+}
+
+.bggrad {
+    background-image: url("../components/timeline/assets/background.png");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-color: black;
 }
