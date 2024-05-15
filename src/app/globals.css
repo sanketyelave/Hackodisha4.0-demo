@@ -31,6 +31,12 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: "Gvonz-light";
+    src: url("./fonts/GvonzLight.woff2") format("woff2"),
+        url("./fonts/GvonzLight.woff") format("woff"),
+        url("./fonts/GvonzLight.ttf") format("truetype");
+}
 
 body {
     background: black;
@@ -48,5 +54,4 @@ body {
     background-image: url("../components/timeline/assets/background.png");
     background-repeat: repeat-y;
     background-size: cover;
-    background-color: black;
 }
