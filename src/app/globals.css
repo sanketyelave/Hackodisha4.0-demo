@@ -55,3 +55,65 @@ body {
     background-repeat: repeat-y;
     background-size: cover;
 }
+.timeline-line::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #07d6d1;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #07d6d1;
+    z-index: -1;
+}
+.timeline-line::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #07d6d1;
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 45%;
+    margin: 20px 0;
+}
+
+.left-item {
+    left: 0;
+    text-align: right;
+}
+
+.right-item {
+    left: 55%;
+    text-align: left;
+}
+
+.right-graphics {
+    position: relative;
+    left: -11%;
+}
+.left-graphics {
+    position: relative;
+    left: 12%;
+}
+
+.title {
+    text-align: center;
+}
