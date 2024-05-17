@@ -22,3 +22,12 @@
     text-wrap: balance;
   }
 }
+@layer base {
+  @font-face {
+    font-family: "titlefont";
+    font-weight: 300;
+    color: #07d6d1;
+    src: url("/Fonts/gvonz-2.ttf") format("truetype");
+    font-display: swap;
+  }
+}
