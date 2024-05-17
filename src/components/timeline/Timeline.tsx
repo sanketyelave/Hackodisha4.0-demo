@@ -26,9 +26,9 @@ export default function Timeline() {
                 </div>
             </header>
             <main className="px-20 w-full flex flex-row justify-center">
-                <div className="flex items-center">
-                    <div id="graphics" className="flex flex-col items-center">
-                        <div className="relative flex items-center justify-center flex-col">
+                <div className="flex flex-col justify-start ">
+                    <div id="graphics" className="flex items-center ">
+                        <div className="relative flex items-center justify-center">
                             <div
                                 id="golaContainer"
                                 className="relative flex items-center justify-center"
@@ -38,18 +38,18 @@ export default function Timeline() {
                                     DAY 1
                                 </span>
                             </div>
-                            <div
-                                id="details"
-                                className="font-gonzLight z-10 mt-2"
-                            >
-                                <h2 className="text-4xl text-[#b137ba]">
-                                    September 9, 2023
-                                </h2>
-                            </div>
+                        </div>
+                        <div id="sidearm" className="opacity-60">
+                            <Image src={side} alt="side" />
                         </div>
                     </div>
-                    <div id="sidearm" className="opacity-60 ml-4">
-                        <Image src={side} alt="side" />
+                    <div
+                        id="details"
+                        className="font-gonzLight top-5 -left-28 mt-2 relative"
+                    >
+                        <h2 className="text-4xl text-[#b137ba]">
+                            September 9, 2023
+                        </h2>
                     </div>
                 </div>
 
