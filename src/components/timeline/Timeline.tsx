@@ -156,9 +156,17 @@ export default function Timeline() {
                                         </span>
                                     </div>
                                 </div>
-                                <div id="sidearm" className="opacity-60">
-                                    <Image src={side} alt="side" />
-                                </div>
+                                {
+                                    <div
+                                        className={`${
+                                            data.position === "left"
+                                                ? ""
+                                                : "right-arm"
+                                        }`}
+                                    >
+                                        <Image src={side} alt="side" />
+                                    </div>
+                                }
                             </div>
                             <div
                                 id="details"

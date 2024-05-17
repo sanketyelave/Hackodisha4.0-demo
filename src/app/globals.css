@@ -114,6 +114,6 @@ body {
     left: 12%;
 }
 
-.title {
-    text-align: center;
+.right-arm {
+    transform: scaleX(-1);
 }
