@@ -17,7 +17,7 @@ export default function Home() {
          <div className="PlatinumTitleImages flex sm:flex-row flex-col items-center sm:justify-center border-r-4 border-b-4 border-white-800 pt-4 pb-4 sm:pt-12 sm:pb-12 sm:ml-12 sm:mr-12 ml-2 mr-2 border-[#411446]">
   {data[0].list.map((item, key) => (
     <div key={key} className="sm:w-48 sm:h-48 w-32 h-32 sm:mr-24 mb-4">
-      <img src={item.src} alt={item.level} className="w-full h-full object-contain object-center"/>
+      <img src={item.src} alt={} className="w-full h-full object-contain object-center"/>
     </div>
   ))}
 </div>
