@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import up from "./assets/up.png";
 import down from "./assets/down.png";
@@ -106,6 +107,13 @@ export default function Timeline() {
             ],
         },
     ];
+    function isMobile() {
+        return window.innerWidth < 768;
+    }
+    const [mobile, setMobile] = useState(isMobile());
+    window.addEventListener("resize", () => {
+        setMobile(isMobile());
+    });
     return (
         <div className="bg-[#181025] bg-opacity-20 pb-10 ">
             <header id="upperImages" className="relative">
@@ -125,82 +133,85 @@ export default function Timeline() {
                     <Image src={down} alt="down" />
                 </div>
             </header>
-            <div className="relative bgTower pb-20">
-                <div className="timeline-line"></div>
-                {timelineData.map((data, index) => (
-                    <div
-                        className={`timeline-item ${
-                            data.position === "left"
-                                ? "left-item "
-                                : "right-item"
-                        }`}
-                        key={index}
-                    >
-                        <div className="flex flex-col justify-start items-start">
-                            <div
-                                id="graphics"
-                                className={`flex items-center flex-row  ${
-                                    data.position === "left"
-                                        ? "left-graphics"
-                                        : "flex-row-reverse right-graphics"
-                                }`}
-                            >
-                                <div className="relative flex items-center justify-center">
-                                    <div
-                                        id="golaContainer"
-                                        className="relative flex items-center justify-center"
-                                    >
-                                        <Image src={gola} alt="gola" />
-                                        <span className="absolute text-3xl inset-0 flex items-center justify-center">
-                                            {data.day}
-                                        </span>
+            <div className="bgTower px-10">
+                <div className="relative pb-20 flex flex-col items-start justify-start">
+                    <div className="timeline-line md:left-[50%] relative right-full md:right-0"></div>
+                    {timelineData.map((data, index) => (
+                        <div
+                            className={`relative w-1/2 md:left-item ${
+                                data.position === "left"
+                                    ? mobile
+                                        ? "right-item"
+                                        : "left-item"
+                                    : "right-item"
+                            }`}
+                            key={index}
+                        >
+                            <div className="flex flex-col justify-start items-start relative right-full md:right-0">
+                                <div
+                                    id="graphics"
+                                    className={`flex items-center flex-row  ${
+                                        data.position === "left"
+                                            ? mobile
+                                                ? "flex-row-reverse right-graphics"
+                                                : ""
+                                            : "flex-row-reverse right-graphics"
+                                    }`}
+                                >
+                                    <div className="relative flex items-center justify-center">
+                                        <div
+                                            id="golaContainer"
+                                            className="relative flex items-center justify-center"
+                                        >
+                                            <Image src={gola} alt="gola" />
+                                            <span className="absolute lg:text-xl md:text-2xl text-sm inset-0 flex items-center justify-center">
+                                                {data.day}
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                                {
                                     <div
                                         className={`${
                                             data.position === "left"
-                                                ? ""
+                                                ? mobile
+                                                    ? "right-arm"
+                                                    : "left-arm"
                                                 : "right-arm"
                                         }`}
                                     >
                                         <Image src={side} alt="side" />
                                     </div>
-                                }
-                            </div>
-                            <div id="details" className="font-gonzLight mt-2">
-                                <h2 className="text-4xl text-[#b137ba] text-center">
-                                    {data.date}
-                                </h2>
-                                <div className="">
-                                    {data.details.map((detail, idx) => (
-                                        <div
-                                            className="mt-5 flex items-center justify-between"
-                                            key={idx}
-                                        >
-                                            <div>
-                                                <p className="text-2xl">
-                                                    {detail.time}
-                                                </p>
+                                </div>
+                                <div
+                                    id="details"
+                                    className="font-gonzLight mt-5 md:w-96 w-64 lg:w-full"
+                                >
+                                    <h2 className="text-base md:text-xl lg:text-4xl text-[#b137ba] text-center">
+                                        {data.date}
+                                    </h2>
+                                    <div>
+                                        {data.details.map((detail, idx) => (
+                                            <div
+                                                className="my-5 flex items-center justify-between "
+                                                key={idx}
+                                            >
+                                                <div>
+                                                    <p className="text-xs md:text-base lg:text-2xl">
+                                                        {detail.time}
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p className="text-xs md:text-base lg:text-2xl  capitalize md:w-96 text-right">
+                                                        {detail.event}
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <p
-                                                    className={`text-2xl  capitalize w-96 ${
-                                                        data.position === "left"
-                                                            ? ""
-                                                            : "text-right"
-                                                    }`}
-                                                >
-                                                    {detail.event}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     );
