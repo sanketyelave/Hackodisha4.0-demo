@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import up from "./assets/up.png";
 import down from "./assets/down.png";
 import union from "./assets/union.svg";
 import gola from "./assets/Group 21.svg";
 import side from "./assets/Group 26.svg";
-
+import tower from "./assets/Tower.png";
 export default function Timeline() {
     const timelineData = [
         {
@@ -110,10 +110,11 @@ export default function Timeline() {
     function isMobile() {
         return window.innerWidth < 768;
     }
-    const [mobile, setMobile] = useState(1);
+    const [mobile, setMobile] = useState(0);
     // window.addEventListener("resize", () => {
     //     setMobile(isMobile());
     // });
+
     return (
         <div className="bg-[#181025] bg-opacity-20 pb-10 ">
             <header id="upperImages" className="relative">
@@ -133,8 +134,13 @@ export default function Timeline() {
                     <Image src={down} alt="down" />
                 </div>
             </header>
-            <div className="bgTower px-24 ">
-                <div className="relative pb-20 flex flex-col items-start justify-start">
+            <section className="px-24 relative">
+                <Image
+                    src={tower}
+                    alt="tower"
+                    className="object-contain object-center opacity-50 mix-blend-hard-light absolute -z-10"
+                />
+                <div className="relative pb-20 z-10 flex flex-col items-start justify-start">
                     <div className="timeline-line md:left-[50%] relative right-full md:right-0"></div>
                     {timelineData.map((data, index) => (
                         <div
@@ -195,7 +201,7 @@ export default function Timeline() {
                                     <div className="">
                                         {data.details.map((detail, idx) => (
                                             <div
-                                                className="my-5 flex items-center justify-between "
+                                                className="my-5 grid grid-cols-2 gap-2 md:gap-5 lg:gap-10 w-full md:w-96 lg:w-96 justify-between items-center md:items-start lg:items-start text-center md:text-left lg:text-left"
                                                 key={idx}
                                             >
                                                 <div>
@@ -216,7 +222,7 @@ export default function Timeline() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </section>
         </div>
     );
 }
