@@ -110,10 +110,10 @@ export default function Timeline() {
     function isMobile() {
         return window.innerWidth < 768;
     }
-    const [mobile, setMobile] = useState(isMobile());
-    window.addEventListener("resize", () => {
-        setMobile(isMobile());
-    });
+    const [mobile, setMobile] = useState(1);
+    // window.addEventListener("resize", () => {
+    //     setMobile(isMobile());
+    // });
     return (
         <div className="bg-[#181025] bg-opacity-20 pb-10 ">
             <header id="upperImages" className="relative">
@@ -133,7 +133,7 @@ export default function Timeline() {
                     <Image src={down} alt="down" />
                 </div>
             </header>
-            <div className="bgTower px-10">
+            <div className="bgTower px-24 ">
                 <div className="relative pb-20 flex flex-col items-start justify-start">
                     <div className="timeline-line md:left-[50%] relative right-full md:right-0"></div>
                     {timelineData.map((data, index) => (
@@ -150,11 +150,11 @@ export default function Timeline() {
                             <div className="flex flex-col justify-start items-start relative right-full md:right-0">
                                 <div
                                     id="graphics"
-                                    className={`flex items-center flex-row  ${
+                                    className={`flex items-center flex-row ${
                                         data.position === "left"
                                             ? mobile
                                                 ? "flex-row-reverse right-graphics"
-                                                : ""
+                                                : "left-graphics"
                                             : "flex-row-reverse right-graphics"
                                     }`}
                                 >
@@ -163,8 +163,12 @@ export default function Timeline() {
                                             id="golaContainer"
                                             className="relative flex items-center justify-center"
                                         >
-                                            <Image src={gola} alt="gola" />
-                                            <span className="absolute lg:text-xl md:text-2xl text-sm inset-0 flex items-center justify-center">
+                                            <Image
+                                                src={gola}
+                                                alt="gola"
+                                                className="scale-150 md:scale-100"
+                                            />
+                                            <span className="absolute lg:text-xl md:text-2xl text-xs inset-0 flex items-center justify-center">
                                                 {data.day}
                                             </span>
                                         </div>
@@ -183,12 +187,12 @@ export default function Timeline() {
                                 </div>
                                 <div
                                     id="details"
-                                    className="font-gonzLight mt-5 md:w-96 w-64 lg:w-full"
+                                    className="font-gonzLight mt-5 w-64 lg:w-full"
                                 >
                                     <h2 className="text-base md:text-xl lg:text-4xl text-[#b137ba] text-center">
                                         {data.date}
                                     </h2>
-                                    <div>
+                                    <div className="">
                                         {data.details.map((detail, idx) => (
                                             <div
                                                 className="my-5 flex items-center justify-between "
