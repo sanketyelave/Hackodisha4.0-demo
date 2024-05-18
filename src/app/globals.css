@@ -55,6 +55,10 @@ body {
     background-repeat: repeat-y;
     background-size: cover;
 }
+.bgTower {
+    background-image: url("../components/timeline/assets/Tower.png");
+    background-size: cover;
+}
 .timeline-line::before {
     content: "";
     position: absolute;
@@ -92,14 +96,16 @@ body {
 .timeline-item {
     position: relative;
     width: 45%;
-    margin: 20px 0;
 }
 
 .left-item {
-    left: 0;
+    left: 10%;
     text-align: right;
 }
-
+.left-graphics {
+    position: relative;
+    left: 4%;
+}
 .right-item {
     left: 55%;
     text-align: left;
@@ -108,10 +114,6 @@ body {
 .right-graphics {
     position: relative;
     left: -11%;
-}
-.left-graphics {
-    position: relative;
-    left: 12%;
 }
 
 .right-arm {

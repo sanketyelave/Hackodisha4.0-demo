@@ -107,17 +107,17 @@ export default function Timeline() {
         },
     ];
     return (
-        <div className="bg-[#181025] bg-opacity-50">
+        <div className="bg-[#181025] bg-opacity-20 pb-10 ">
             <header id="upperImages" className="relative">
                 <div className="opacity-50">
                     <Image src={up} alt="up" />
                 </div>
                 <div className="absolute">
                     <header className="flex flex-col gap-2 ml-10 absolute bottom-10">
-                        <h1 className="font-light title text-left leading-normal smallmobile:text-md text-lg sm:text-xl md:text-4xl">
+                        <h1 className="font-light title text-left text-lg sm:text-xl md:text-4xl">
                             Timeline
                         </h1>
-                        <div className="bg-[#0c9794] h-2 "></div>
+                        <div className="bg-[#0c9794] h-2"></div>
                     </header>
                     <Image src={union} alt="union" />
                 </div>
@@ -125,13 +125,13 @@ export default function Timeline() {
                     <Image src={down} alt="down" />
                 </div>
             </header>
-            <div className="relative px-28">
+            <div className="relative bgTower pb-20">
                 <div className="timeline-line"></div>
                 {timelineData.map((data, index) => (
                     <div
                         className={`timeline-item ${
                             data.position === "left"
-                                ? "left-item"
+                                ? "left-item "
                                 : "right-item"
                         }`}
                         key={index}
@@ -168,14 +168,11 @@ export default function Timeline() {
                                     </div>
                                 }
                             </div>
-                            <div
-                                id="details"
-                                className="font-gonzLight mt-2 relative"
-                            >
+                            <div id="details" className="font-gonzLight mt-2">
                                 <h2 className="text-4xl text-[#b137ba] text-center">
                                     {data.date}
                                 </h2>
-                                <div className="relative">
+                                <div className="">
                                     {data.details.map((detail, idx) => (
                                         <div
                                             className="mt-5 flex items-center justify-between"
@@ -187,7 +184,13 @@ export default function Timeline() {
                                                 </p>
                                             </div>
                                             <div>
-                                                <p className="text-2xl capitalize">
+                                                <p
+                                                    className={`text-2xl  capitalize w-96 ${
+                                                        data.position === "left"
+                                                            ? ""
+                                                            : "text-right"
+                                                    }`}
+                                                >
                                                     {detail.event}
                                                 </p>
                                             </div>
@@ -199,11 +202,6 @@ export default function Timeline() {
                     </div>
                 ))}
             </div>
-            {/* <div className="flex flex-col items-center justify-center">
-                <div className="rounded-full h-10 w-10 bg-[#07d6d1] opacity-60"></div>
-                <div className="h-full w-2 bg-[#07d6d1] opacity-60"></div>
-                <div className="rounded-full h-10 w-10 bg-[#07d6d1] opacity-60"></div>
-            </div> */}
         </div>
     );
 }
