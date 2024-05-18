@@ -138,7 +138,7 @@ export default function Timeline() {
                 <Image
                     src={tower}
                     alt="tower"
-                    className="object-contain object-center opacity-50 mix-blend-hard-light absolute -z-10"
+                    className="object-contain object-center h-[110%] opacity-50 mix-blend-hard-light absolute -z-10"
                 />
                 <div className="relative pb-20 z-10 flex flex-col items-start justify-start">
                     <div className="timeline-line md:left-[50%] relative right-full md:right-0"></div>
