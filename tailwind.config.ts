@@ -9,7 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-nav)']
+        sans: ['var(--font-nav)'],
+        syoog: ['syoog', 'sans-serif'],
+        gvonz: ['gvonz', 'monospace']
       }
     },
   },
