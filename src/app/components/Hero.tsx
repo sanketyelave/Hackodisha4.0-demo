@@ -12,6 +12,7 @@ const Hero = () => {
           width={2000}
           alt='bg image'
           className='h-screen w-screen object-cover'
+          priority
           />
         </div>
       </div>
@@ -37,7 +38,7 @@ const Hero = () => {
         alt='hero logo'
         className='w-10/12'
         />
-        <h1 className='border-2 rounded-2xl p-2 text-5xl mb-6 mt-4 md:w-[25rem] text-center lg:w-[34rem] font-gvonz'>9-10 September</h1>
+        <h1 className='border-2 rounded-2xl p-2 text-3xl md:text-5xl mb-6 mt-4 md:w-[25rem] text-center lg:w-[34rem] font-gvonz'>9-10 September</h1>
         <a 
          className='border-2 rounded-2xl p-2 text-xl mb-8 lg:w-[16rem] font-syoog text-center hover:bg-[#096D6A] transition-colors ease-in' 
          href='https://hackodisha3.devfolio.co/'
