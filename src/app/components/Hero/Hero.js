@@ -33,8 +33,8 @@ const Hero = () => {
         <div className="mlogo flex justify-center w-[100%] "><img src="/Images/Group8.png" alt="no" className='w-[83%]  md:w-[36%] h-max-[80px] lg:w-[48%] xl:w-[60%] 2xl:w-[73%]'/></div>
         <div className="llogo flex justify-center mt-[-12px] bg-transparent w-[100%] "><img src="/Images/lower.png" alt="no" className='w-[83%] md:w-[36%] h-max-[240px] lg:w-[48%] xl:w-[60%] 2xl:w-[73%]'/></div>
         <div className="date flex justify-center text-white text-2xl font-gvonz pt-5 md:text-5xl"><h1 className='border-2 rounded-2xl p-2 px-4'>9 - 10 September</h1></div>
-        <div className="devbtn flex justify-center text-white font-syoog pt-2 items-center text-sm mt-3 cursor-pointer md:text-lg "><span className='hover:bg-[#096D6A] flex items-center border-2 rounded-xl px-4 py-2 transition-colors ease-in bg-black bg-opacity-35'><a href="/">Apply on Devfolio </a><img src="/Images/link2.png" alt="no" className=' w-4 h-4 ml-4 hover:bg-[#096D6A]'/></span></div>
-        <div className="devbtn flex justify-center text-white font-syoog pt-2 items-center text-sm mt-3 cursor-pointer md:hidden"><span className='hover:bg-[#096D6A] flex items-center border-2 rounded-2xl px-4 py-2 transition-colors ease-in bg-black bg-opacity-35'><a href="/">Join Discord</a></span></div>
+        <div className="devbtn flex justify-center text-white font-gvonz pt-2 items-center text-sm mt-3 cursor-pointer md:text-lg "><span className='hover:bg-[#096D6A] flex items-center border-2 rounded-xl px-4 py-2 transition-colors ease-in bg-black bg-opacity-35'><a href="/">Apply on Devfolio </a><img src="/Images/link2.png" alt="no" className=' w-4 h-4 ml-4 hover:bg-[#096D6A]'/></span></div>
+        <div className="devbtn flex justify-center text-white font-gvonz pt-2 items-center text-sm mt-3 cursor-pointer md:hidden"><span className='hover:bg-[#096D6A] flex items-center border-2 rounded-2xl px-4 py-2 transition-colors ease-in bg-black bg-opacity-35'><a href="/">Join Discord</a></span></div>
       </div>
       </div>
 
