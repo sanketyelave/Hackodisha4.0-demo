@@ -2,16 +2,29 @@ import React from 'react'
 
 const Hero = () => {
   return (
+    <>
     <div>
 
 
       <div className="img">
-        <img src="/Images/homebg.webp" alt="no" className="object-cover absolute h-[100%] w-[100%]"/>
+      <img src="/Images/homebg.webp" alt="no" className="object-cover absolute h-[100%] w-[100%]"/>
       </div>
+  
 
-      <div className="grad flex h-[100%] w-[100%] absolute">
-        <div className="grad1 w-[53%] h-[100%] bg-opacity-[0.32] lg:w-[51%]"><img src="/Images/Rectangle39.png" alt="no" className=' mix-blend-overlay h-[100%] w-[100%]' /></div>
-        <div className="grad2 w-[47%] h-[100%] lg:w-[49%]"><img src="/Images/Rectangle123.png" alt="no" className=' mix-blend-color-burn h-[100%] w-[100%]'/></div>
+      <div className="grad flex h-[100%] w-[100%] absolute overflow-hidden">
+
+      <img src="/gif/rain.gif" alt="no" className='absolute h-screen w-screen mix-blend-screen md:mix-blend-lighten opacity-60'/>
+
+        <div className="grad1 w-[53%] h-[100%] bg-opacity-[0.32] lg:w-[51%]">
+        <div className="thunder hidden lg:block absolute mix-blend-lighten opacity-20 w-[45%] h-[110%]"><img src="/gif/thunder3.gif" alt="no" className='h-[100%] mix-blend-difference'/></div>
+        <img src="/Images/Rectangle39.png" alt="no" className=' mix-blend-overlay h-[100%] w-[100%]' /></div>
+
+
+        <div className="grad2 w-[47%] h-[100%] lg:w-[49%]">
+        <div className="thunder hidden lg:block absolute mix-blend-lighten opacity-20 w-[47%] h-[110%]"><img src="/gif/thunder3.gif" alt="no" className='h-[100%] mix-blend-difference'/></div>
+        <img src="/Images/Rectangle123.png" alt="no" className='mix-blend-color-burn h-[100%] w-[100%]'/></div>
+        
+
       </div>
 
       <div className="box flex justify-center pt-[50%] md:pt-[14%] lg:pt-[10%] xl:pt-[8%] 2xl:pt-[6%]">
@@ -25,7 +38,10 @@ const Hero = () => {
       </div>
       </div>
 
+      
+
     </div>
+    </>
   )
 }
 
