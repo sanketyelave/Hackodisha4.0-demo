@@ -1,0 +1,35 @@
+
+  @media (max-width: 316px) {
+    .faq-image {
+      width: 100px;
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .collapse {
+      width: 90%;
+    }
+  }
+   
+  @media  (max-width: 1024px) {
+    .Container{
+        width: 100%;
+    }
+    .collapse {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .collapse {
+      width: 80%;
+      margin-right: auto;
+    }
+    .faqanswer{
+      font-size: x-large;
+    }
+    .faqquestion{
+      font-size: 1.5rem;
+    }
+  }
