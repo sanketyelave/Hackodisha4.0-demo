@@ -11,13 +11,14 @@ const Navbar = () => {
       setIsOpen(!isOpen);
   };
   return (
-    <div className='backdrop-blur-sm p-6 px-8 flex justify-between items-center absolute top-0 w-[100%] max-h-[4rem]'>
+    <div className='backdrop-blur-sm p-8 px-8 flex justify-between items-center absolute top-0 w-[100%] max-h-[4rem] z-50'>
     <div>
       <Image 
       src={"/HO3.svg"} 
       alt="logo"
       width={80}
       height={80}
+      priority
       />
     </div>
     <button onClick={handleClick}
@@ -42,7 +43,7 @@ const Navbar = () => {
         </li>
       </ul>
     </div>
-    <ul className={`flex flex-col w-[100%] py-4 pl-8 backdrop-blur-sm  gap-4 lg:gap-8 fixed top-16 transition-transform duration-500 ease-in-out text-white text-2xl left-0 ${isOpen ? '-translate-x-0' : '-translate-x-full'}`}>
+    <ul className={`flex flex-col w-[100%] py-4 pl-8 backdrop-blur-sm gap-4 lg:gap-8 fixed top-16 transition-transform duration-500 ease-in-out text-white text-2xl left-0 ${isOpen ? '-translate-x-0' : '-translate-x-full'}`}>
         <li className={`hover:text-[#06EBE5] transition-transform duration-500 ease-in-out delay-300 ${isOpen ? '-translate-x-0' : '-translate-x-full'}`}><a href='#'>Home</a></li>
         <li className={`hover:text-[#06EBE5] transition-transform duration-500 ease-in-out delay-450 ${isOpen ? '-translate-x-0' : '-translate-x-full'}`}><a href='#'>About Us</a></li>
         <li className={`hover:text-[#06EBE5] transition-transform duration-700 ease-in-out delay-450 ${isOpen ? '-translate-x-0' : '-translate-x-full'}`}><a href='#'>Contact Us</a></li>

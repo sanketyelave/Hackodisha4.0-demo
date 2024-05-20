@@ -4,9 +4,8 @@ import Hero from './components/Hero'
 
 const page = () => {
   return (
-    <div className='relative'>
+    <div>
       <Hero/>
-      <Navbar/>
     </div>
   )
 }
