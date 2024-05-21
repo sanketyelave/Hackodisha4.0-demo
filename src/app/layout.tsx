@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import localFont from "next/font/local"
-import { Electrolize } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const Electro = Electrolize({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--electro'
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={Electro.className}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

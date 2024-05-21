@@ -1,18 +1,43 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@layer base {
-    @font-face {
-        font-family: "gvonz";
-        font-weight: 300;
-        src: url("/gvonz-2.ttf") format("truetype");
-        font-display: swap;
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
   }
-    @font-face {
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+    @layer base {
+        @font-face {
+            font-family: "gvonz";
+            font-weight: 300;
+            src: url("/gvonz-2.ttf") format("truetype");
+            font-display: swap;
+      }
+      @font-face {
         font-family: "syoog";
-        color: #07d6d1;
         src: url("/syoog.otf") format("opentype");
         font-display: swap;
+      }
+      @font-face {
+        font-family: "Electrolize";
+        src: url("/navbarTxt.ttf") format("truetype");
+        font-display: swap;
+      }
     }
+  }
 }
+
