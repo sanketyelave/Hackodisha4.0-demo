@@ -2,23 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: "Gvonz";
+    src: url("./fonts/GvonzRegular.woff2") format("woff2"),
+        url("./fonts/GvonzRegular.woff") format("woff"),
+        url("./fonts/GvonzRegular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Gvonz-light";
+    src: url("./fonts/GvonzLight.woff2") format("woff2"),
+        url("./fonts/GvonzLight.woff") format("woff"),
+        url("./fonts/GvonzLight.ttf") format("truetype");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body {
+    color: white;
+    font-family: "Gvonz", sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
+.title {
+    font-family: "Gvonz", sans-serif;
+    font-weight: 300;
+    color: #07d6d1;
+}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.bggrad {
+    background-image: url("../components/timeline/assets/background.png");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+.bgTower {
+    background-image: url("../components/timeline/assets/Tower.png");
+    background-size: cover;
+}
+.timeline-line::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #07d6d1;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.timeline-line {
+    position: absolute;
+    /* left: 50%; */
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #07d6d1;
+    z-index: -1;
+}
+.timeline-line::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #07d6d1;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.left-item {
+    @apply left-[10%] text-right md:-left-10;
+}
+.left-graphics {
+    @apply relative left-[18%];
+}
+.right-item {
+    @apply left-[55%] md:left-[55.5%];
+}
+
+.right-graphics {
+    @apply relative -left-[11%];
+}
+
+.right-arm {
+    transform: scaleX(-1);
 }
