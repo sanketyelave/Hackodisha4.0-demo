@@ -122,7 +122,6 @@ function Timeline() {
 
             </div>
           </div>
-
       </div>
 
     </div>

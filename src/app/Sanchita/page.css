@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(18, 1, 37);
+}
+
+.about{
+    font-family: "Audiowide", sans-serif;
+    text-underline-offset: 20px;
+    text-decoration: underline;
+    text-decoration-color: rgba(64, 224, 208, 0.619);
+    text-decoration-thickness:10px ;
+}
+
+.round {
+    position:absolute;
+    height: 600px;
+    width: 600px;
+    
+}
+
+.ho3{
+    font-family: "Audiowide", sans-serif;
+    position: absolute;
+    height: 80px;
+}
+
+.para{
+    font-family: "Audiowide", sans-serif;
+    line-height: 3rem;
+}
+
+.post{
+    font-family: "Audiowide", sans-serif;
+    text-underline-offset: 20px;
+    text-decoration: underline;
+    text-decoration-color: rgba(64, 224, 208, 0.619);
+    text-decoration-thickness:10px;
+}
+
+.ex{
+    color: rgb(203, 22, 203);
+}
+
